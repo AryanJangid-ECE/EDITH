@@ -2,8 +2,8 @@
 
 > Single source of truth for the project. Read this fully before every change. Update it at the end of every phase (see Section 19 and MASTER_INSTRUCTIONS.md).
 
-**Last updated:** (fill in at each phase)
-**Current phase:** (fill in)
+**Last updated:** 2026-11-09
+**Current phase:** Phase 4 / DONE (tested)
 **Status legend:** NOT STARTED / IN PROGRESS / DONE (tested) / BLOCKED
 
 ---
@@ -530,10 +530,10 @@ Update the Status and Notes columns at the end of every phase. Never mark DONE u
 
 | Phase | Name | Depends on | Status | Notes / date |
 |---|---|---|---|---|
-| 1 | Project initialization and tooling | none | NOT STARTED | |
-| 2 | Frontend design system and app shell | 1 | NOT STARTED | |
+| 1 | Project initialization and tooling | none | DONE (tested) | Initial repo, backend FastAPI scaffold, frontend Vite scaffold, validation passes; 2026-11-09 |
+| 2 | Frontend design system and app shell | 1 | DONE (tested) | Shell, route registry, design tokens, detail toggle, and dev component gallery implemented; 2026-11-09 |
 | 3 | Trust components and page skeletons | 2 | NOT STARTED | |
-| 4 | Database models, seed, auth, errors, logging | 1 | NOT STARTED | |
+| 4 | Database models, seed, auth, errors, logging | 1 | DONE (tested) | ORM/SQLite foundation, idempotent demo seed, bcrypt/JWT auth, request IDs, uniform errors, and 10/minute per-IP login limiter; backend and frontend checks passed; 2026-11-09 |
 | 5 | Apps and permissions APIs, PolicyGate, ControlService | 4 | NOT STARTED | |
 | 6 | Event schema, ingestion, simulator, WebSocket | 5 | NOT STARTED | |
 | 7 | Baselines, detection, trust-score engine | 6 | NOT STARTED | |
@@ -563,4 +563,5 @@ C1:4 | C2:5,9 | C3:6 | C4:6,10 | C5:7 | C6:7 | C7:8,10 | C8:8,10 | C9:5,9 | C10:
 
 ## 21. Change Log
 
-(Cursor appends one dated line per phase: what changed, files added, APIs added/changed, known issues.)
+2026-11-09: Phase 1 complete. Added the repo scaffold, .gitignore, .env example, backend FastAPI app with health endpoint, pytest/Ruff configuration, frontend Vite/React/TypeScript/Tailwind scaffold, and validation scripts. Known issue: local Python 3.15 install required a compatible dependency set and no final-phase product features were implemented.
+2026-11-09: Phase 4 complete. Added core SQLAlchemy models and additive `created_at`/index initialization, SQLite connection safeguards, incremental synthetic demo seeding, bcrypt/JWT login and identity endpoints, a process-local 10-attempt-per-IP-per-minute login limiter, request-ID logging, and uniform sanitized errors. Added isolated database/API fixtures and foundation tests. Ingest rate limiting remains for Phase 6 with the ingest endpoint.

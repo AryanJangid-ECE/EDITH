@@ -1,0 +1,73 @@
+.assistant-window {
+  animation: assistant-window-in 180ms ease-out both;
+}
+
+.assistant-orb {
+  animation: assistant-orb-glow 2.8s ease-in-out infinite;
+}
+
+.assistant-orb-halo {
+  animation: assistant-halo 2.8s ease-out infinite;
+}
+
+.assistant-typing-dot {
+  animation: assistant-typing 900ms ease-in-out infinite;
+}
+
+@keyframes assistant-window-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes assistant-orb-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgb(92 200 184 / 14%);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgb(92 200 184 / 28%);
+  }
+}
+
+@keyframes assistant-halo {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.38);
+  }
+}
+
+@keyframes assistant-typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-window,
+  .assistant-orb,
+  .assistant-orb-halo,
+  .assistant-typing-dot {
+    animation: none;
+  }
+}
